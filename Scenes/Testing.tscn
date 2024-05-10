@@ -1,30 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxbcf26oeslad"]
+[gd_scene load_steps=10 format=3 uid="uid://dxbcf26oeslad"]
 
 [ext_resource type="Script" path="res://Scripts/GameObjects/Player.gd" id="1_1h2xn"]
 [ext_resource type="Texture2D" uid="uid://c5rrnmfheonwu" path="res://icon.svg" id="2_e18eb"]
+[ext_resource type="Script" path="res://Scripts/GameObjects/cage.gd" id="2_fk23x"]
 [ext_resource type="PackedScene" uid="uid://gvhhs1fc0o5k" path="res://Scenes/Component/floor.tscn" id="3_tt81m"]
 [ext_resource type="PackedScene" uid="uid://b7opcmp56biwl" path="res://Scenes/Component/collectableEgg.tscn" id="4_5lx7x"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="5_muosr"]
+[ext_resource type="Script" path="res://Scripts/GameObjects/BaseEggLabel.gd" id="6_pkqem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3rgw"]
 size = Vector2(112, 114)
 
-[node name="Playing" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkrlo"]
+size = Vector2(138, 94)
+
+[node name="Testing" type="Node2D"]
 
 [node name="Floor" parent="." instance=ExtResource("3_tt81m")]
-position = Vector2(221, 1183)
+position = Vector2(645, 1183)
+scale = Vector2(10.1461, 0.253804)
+
+[node name="Floor3" parent="." instance=ExtResource("3_tt81m")]
+position = Vector2(645, 1183)
+scale = Vector2(10.1461, 0.253804)
 
 [node name="Floor2" parent="." instance=ExtResource("3_tt81m")]
 position = Vector2(858, 967)
 
 [node name="Floor10" parent="." instance=ExtResource("3_tt81m")]
-position = Vector2(524, 718)
+position = Vector2(1330, 741)
 
 [node name="Floor14" parent="." instance=ExtResource("3_tt81m")]
-position = Vector2(826, 479)
+position = Vector2(966, 522)
+
+[node name="Floor15" parent="." instance=ExtResource("3_tt81m")]
+position = Vector2(586, 386)
+scale = Vector2(1.32219, 0.966409)
 
 [node name="MidEgg" parent="." instance=ExtResource("4_5lx7x")]
-position = Vector2(553, 627)
+position = Vector2(1359, 650)
 eggValue = 30
 imgPath = "res://MidEgg.png"
 
@@ -32,36 +46,58 @@ imgPath = "res://MidEgg.png"
 position = Vector2(812, 892)
 
 [node name="EpicEgg" parent="." instance=ExtResource("4_5lx7x")]
-position = Vector2(378, 636)
+position = Vector2(1184, 659)
 eggValue = 50
 imgPath = "res://EpicEgg.png"
 
 [node name="BaseEgg2" parent="." instance=ExtResource("4_5lx7x")]
-position = Vector2(506, 249)
+position = Vector2(693, 294)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(71, 72)
+position = Vector2(105, 527)
 script = ExtResource("1_1h2xn")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_e18eb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 1)
+position = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_b3rgw")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(0, -1)
 
 [node name="ScoreLabel" type="RichTextLabel" parent="CharacterBody2D/Camera2D"]
-offset_left = -293.0
+offset_left = -294.0
 offset_top = -293.0
-offset_right = 169.0
+offset_right = 168.0
 offset_bottom = -241.0
 theme_override_font_sizes/normal_font_size = 30
 text = "0"
+fit_content = true
 script = ExtResource("5_muosr")
+metadata/_edit_use_anchors_ = true
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(379, 358)
+[node name="BaseEggCount" type="RichTextLabel" parent="CharacterBody2D/Camera2D"]
+offset_left = 100.0
+offset_top = -307.0
+offset_right = 395.0
+offset_bottom = -267.0
+scale = Vector2(1.48, 1)
+text = "Base Egg Count"
+fit_content = true
+script = ExtResource("6_pkqem")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_fk23x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1191, 1111)
+shape = SubResource("RectangleShape2D_qkrlo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(1194, 1103)
 texture = ExtResource("2_e18eb")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

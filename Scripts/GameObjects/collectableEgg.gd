@@ -10,4 +10,8 @@ func deleteEgg():
 
 func _on_body_entered(body):
 	SingletonVars.setScore(eggValue)
+	if (eggValue == 10):
+		SingletonVars.setEggsCollected(1,0,0)
 	deleteEgg();
+
+
