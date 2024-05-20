@@ -1,6 +1,6 @@
 extends Area2D
 @export var eggValue = 10
-@export var imgPath = "res://BaseEgg.png"
+@export var imgPath = "res://Assets/Sprites/BaseEgg.png"
 
 func _ready():
 	$Sprite2D.texture = load(imgPath)

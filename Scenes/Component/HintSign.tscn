@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhwb72qf61pf"]
+
+[ext_resource type="Texture2D" uid="uid://did0df27cat66" path="res://Assets/four-seasons-tileset.png" id="1_u8npv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epk8g"]
+atlas = ExtResource("1_u8npv")
+region = Rect2(65, 49, 14, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_348he"]
+atlas = ExtResource("1_u8npv")
+region = Rect2(113, 97, 14, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04q3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epk8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_348he")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0ecr"]
+size = Vector2(14, 15)
+
+[node name="HintSign" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_04q3r")
+autoplay = "default"
+frame_progress = 0.231013
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_l0ecr")

@@ -1,28 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxbcf26oeslad"]
+[gd_scene load_steps=8 format=3 uid="uid://dxbcf26oeslad"]
 
-[ext_resource type="Script" path="res://Scripts/GameObjects/Player.gd" id="1_1h2xn"]
-[ext_resource type="Texture2D" uid="uid://c5rrnmfheonwu" path="res://icon.svg" id="2_e18eb"]
+[ext_resource type="Texture2D" uid="uid://be56b42hwhbnu" path="res://Scenes/Component/Untitled.png" id="1_h0585"]
+[ext_resource type="Texture2D" uid="uid://cw5h0hkvr5dd8" path="res://icon.svg" id="2_e18eb"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/cage.gd" id="2_fk23x"]
-[ext_resource type="PackedScene" uid="uid://gvhhs1fc0o5k" path="res://Scenes/Component/floor.tscn" id="3_tt81m"]
+[ext_resource type="PackedScene" uid="uid://gvhhs1fc0o5k" path="res://Scenes/Component/Wall.tscn" id="3_tt81m"]
+[ext_resource type="PackedScene" uid="uid://csefkacgitkrp" path="res://Scenes/Player.tscn" id="4_2pkej"]
 [ext_resource type="PackedScene" uid="uid://b7opcmp56biwl" path="res://Scenes/Component/collectableEgg.tscn" id="4_5lx7x"]
-[ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="5_muosr"]
-[ext_resource type="Script" path="res://Scripts/GameObjects/BaseEggLabel.gd" id="6_pkqem"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3rgw"]
-size = Vector2(112, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkrlo"]
 size = Vector2(138, 94)
 
 [node name="Testing" type="Node2D"]
 
-[node name="Floor" parent="." instance=ExtResource("3_tt81m")]
-position = Vector2(645, 1183)
-scale = Vector2(10.1461, 0.253804)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1046, 676.5)
+scale = Vector2(2.44525, 1.67296)
+texture = ExtResource("1_h0585")
 
 [node name="Floor3" parent="." instance=ExtResource("3_tt81m")]
-position = Vector2(645, 1183)
-scale = Vector2(10.1461, 0.253804)
+visible = false
+position = Vector2(1037, 1100)
+scale = Vector2(16.7461, -0.306655)
 
 [node name="Floor2" parent="." instance=ExtResource("3_tt81m")]
 position = Vector2(858, 967)
@@ -43,6 +41,7 @@ eggValue = 30
 imgPath = "res://MidEgg.png"
 
 [node name="BaseEgg" parent="." instance=ExtResource("4_5lx7x")]
+top_level = true
 position = Vector2(812, 892)
 
 [node name="EpicEgg" parent="." instance=ExtResource("4_5lx7x")]
@@ -53,41 +52,7 @@ imgPath = "res://EpicEgg.png"
 [node name="BaseEgg2" parent="." instance=ExtResource("4_5lx7x")]
 position = Vector2(693, 294)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(105, 527)
-script = ExtResource("1_1h2xn")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("2_e18eb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(3, 1)
-shape = SubResource("RectangleShape2D_b3rgw")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(0, -1)
-
-[node name="ScoreLabel" type="RichTextLabel" parent="CharacterBody2D/Camera2D"]
-offset_left = -294.0
-offset_top = -293.0
-offset_right = 168.0
-offset_bottom = -241.0
-theme_override_font_sizes/normal_font_size = 30
-text = "0"
-fit_content = true
-script = ExtResource("5_muosr")
-metadata/_edit_use_anchors_ = true
-
-[node name="BaseEggCount" type="RichTextLabel" parent="CharacterBody2D/Camera2D"]
-offset_left = 100.0
-offset_top = -307.0
-offset_right = 395.0
-offset_bottom = -267.0
-scale = Vector2(1.48, 1)
-text = "Base Egg Count"
-fit_content = true
-script = ExtResource("6_pkqem")
-metadata/_edit_use_anchors_ = true
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_2pkej")]
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_fk23x")
@@ -97,7 +62,7 @@ position = Vector2(1191, 1111)
 shape = SubResource("RectangleShape2D_qkrlo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(1194, 1103)
+position = Vector2(1889, 1001)
 texture = ExtResource("2_e18eb")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
