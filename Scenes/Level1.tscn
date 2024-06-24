@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://xuo8cma0wdlx"]
+[gd_scene load_steps=12 format=3 uid="uid://xuo8cma0wdlx"]
 
 [ext_resource type="Texture2D" uid="uid://did0df27cat66" path="res://Assets/four-seasons-tileset.png" id="1_mx0bg"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="3_ruepk"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhwb72qf61pf" path="res://Scenes/Component/HintSign.tscn" id="5_ltcwt"]
 [ext_resource type="PackedScene" uid="uid://ba2i8yovokk4b" path="res://Scenes/Component/JumpMushroom.tscn" id="6_sbe1o"]
 [ext_resource type="PackedScene" uid="uid://b7opcmp56biwl" path="res://Scenes/Component/collectableEgg.tscn" id="7_eun61"]
+[ext_resource type="PackedScene" uid="uid://38in7ayi4icx" path="res://Scenes/Component/Cage.tscn" id="8_entxh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m2kk0"]
 
@@ -491,6 +492,7 @@ offset_left = 87.0
 offset_top = 272.0
 offset_right = 549.0
 offset_bottom = 324.0
+scale = Vector2(1, 0.919999)
 theme_override_font_sizes/normal_font_size = 30
 text = "0"
 fit_content = true
@@ -556,3 +558,9 @@ position = Vector2(951, 220)
 scale = Vector2(0.154955, 0.165869)
 collision_layer = 3
 collision_mask = 3
+
+[node name="Cage" parent="." instance=ExtResource("8_entxh")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(451, 393)
+scale = Vector2(0.44, 0.36)
