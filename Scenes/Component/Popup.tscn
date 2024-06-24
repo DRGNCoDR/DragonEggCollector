@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkcy0tfqppuhr"]
+
+[ext_resource type="Script" path="res://Scripts/GameObjects/Popup.gd" id="1_pm4w8"]
+[ext_resource type="Texture2D" uid="uid://c161y7gu3euo1" path="res://Assets/SpeachBubble.png" id="1_xt1yy"]
+
+[node name="Popup" type="Node2D"]
+script = ExtResource("1_pm4w8")
+
+[node name="SpeachBubble" type="Sprite2D" parent="."]
+position = Vector2(207, -204)
+texture = ExtResource("1_xt1yy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SpeachBubble"]
+offset_left = -268.0
+offset_top = -113.0
+offset_right = 272.0
+offset_bottom = 60.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 28
+text = "fassdfa"

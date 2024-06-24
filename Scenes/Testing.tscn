@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxbcf26oeslad"]
 
-[ext_resource type="Texture2D" uid="uid://be56b42hwhbnu" path="res://Scenes/Component/Untitled.png" id="1_h0585"]
+[ext_resource type="Texture2D" uid="uid://be56b42hwhbnu" path="res://Assets/Untitled.png" id="1_h0585"]
 [ext_resource type="Texture2D" uid="uid://cw5h0hkvr5dd8" path="res://icon.svg" id="2_e18eb"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/cage.gd" id="2_fk23x"]
 [ext_resource type="PackedScene" uid="uid://gvhhs1fc0o5k" path="res://Scenes/Component/Wall.tscn" id="3_tt81m"]

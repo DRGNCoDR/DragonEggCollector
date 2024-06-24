@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhwb72qf61pf"]
+[gd_scene load_steps=8 format=3 uid="uid://dhwb72qf61pf"]
 
+[ext_resource type="Script" path="res://Scripts/GameObjects/HintSign.gd" id="1_f0cp6"]
 [ext_resource type="Texture2D" uid="uid://did0df27cat66" path="res://Assets/four-seasons-tileset.png" id="1_u8npv"]
+[ext_resource type="PackedScene" uid="uid://bkcy0tfqppuhr" path="res://Scenes/Component/Popup.tscn" id="2_rnaoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epk8g"]
 atlas = ExtResource("1_u8npv")
@@ -28,8 +30,11 @@ animations = [{
 size = Vector2(14, 15)
 
 [node name="HintSign" type="Node2D"]
+script = ExtResource("1_f0cp6")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_04q3r")
@@ -38,3 +43,10 @@ frame_progress = 0.231013
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_l0ecr")
+
+[node name="Popup" parent="." instance=ExtResource("2_rnaoq")]
+visible = false
+scale = Vector2(0.48, 0.399999)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
