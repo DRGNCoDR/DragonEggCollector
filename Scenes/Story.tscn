@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd7wpv3080b6s"]
+
+[ext_resource type="Script" path="res://Scripts/GameObjects/Story.gd" id="1_u6oxq"]
+
+[node name="Story" type="Node2D"]
+script = ExtResource("1_u6oxq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 1152.0
+offset_bottom = 651.0
+theme_override_font_sizes/normal_font_size = 40
+text = "You are a dragon in a magical area.
+
+Poachers have stolen some of your precious dragon eggs and plan to sell them for profit, and use their power for nefarious purposes. 
+
+Collect Power orbs to rescue the egg from the poachers cages and save the world from calamity...
+
+Press ENTER to begin..."

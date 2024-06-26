@@ -7,7 +7,9 @@
 script = ExtResource("1_pm4w8")
 
 [node name="SpeachBubble" type="Sprite2D" parent="."]
-position = Vector2(207, -204)
+z_index = 4096
+position = Vector2(90, -115.5)
+scale = Vector2(0.685484, 0.592166)
 texture = ExtResource("1_xt1yy")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="SpeachBubble"]
