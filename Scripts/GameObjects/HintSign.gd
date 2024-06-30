@@ -5,7 +5,7 @@ extends Node2D
 @export var popupText = "";
 
 func _ready():
-	$Popup.visible = false;
+	$Popup.visible = popupShown;
 	setText();
 
 func _on_area_2d_body_entered(body):
