@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://xuo8cma0wdlx"]
 
-[ext_resource type="Texture2D" uid="uid://did0df27cat66" path="res://Assets/four-seasons-tileset.png" id="1_mx0bg"]
+[ext_resource type="Texture2D" uid="uid://dqv8jepcrsxk5" path="res://Assets/four-seasons-tileset.png" id="1_mx0bg"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="3_ruepk"]
 [ext_resource type="PackedScene" uid="uid://csefkacgitkrp" path="res://Scenes/Player.tscn" id="3_uofg6"]
 [ext_resource type="PackedScene" uid="uid://dhwb72qf61pf" path="res://Scenes/Component/HintSign.tscn" id="5_ltcwt"]
@@ -532,12 +532,6 @@ scale = Vector2(0.154955, 0.165869)
 collision_layer = 3
 collision_mask = 3
 
-[node name="Cage" parent="." instance=ExtResource("8_entxh")]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(451, 375)
-scale = Vector2(0.314526, 0.24)
-
 [node name="JumpMushroom3" parent="." instance=ExtResource("6_sbe1o")]
 position = Vector2(1089, 182)
 
@@ -548,6 +542,10 @@ scale = Vector2(0.154955, 0.165869)
 collision_layer = 3
 collision_mask = 3
 eggValue = 100
+
+[node name="Cage" parent="." instance=ExtResource("8_entxh")]
+position = Vector2(460, 366)
+scale = Vector2(0.42, 0.30303)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(525, 541)
@@ -565,7 +563,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(1604.14, -500)
+scale = Vector2(0.2, 0.2)
+offset = Vector2(120, 0)
 editor_draw_limits = true
 editor_draw_drag_margin = true
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://38in7ayi4icx"]
 
 [ext_resource type="Script" path="res://Scripts/GameObjects/Cage.gd" id="1_8ucp4"]
-[ext_resource type="Texture2D" uid="uid://dth7xwqsmeve" path="res://Assets/Cage.png" id="2_kdyhb"]
+[ext_resource type="Texture2D" uid="uid://cxr2g08nohxoo" path="res://Assets/Cage.png" id="2_kdyhb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u15ke"]
 size = Vector2(208, 96)

@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 SingletonVars="*res://Scripts/Singletons/singleton_vars.gd"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+
 [dotnet]
 
 project/assembly_name="Dragon Egg Collector"
