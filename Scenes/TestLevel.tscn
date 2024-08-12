@@ -495,7 +495,7 @@ scale = Vector2(0.292368, 0.243237)
 collision_layer = 2
 collision_mask = 2
 
-[node name="Camera2D2" type="Camera2D" parent="CanvasLayer/CharacterBody2D"]
+[node name="Camera2D3" type="Camera2D" parent="CanvasLayer/CharacterBody2D"]
 position = Vector2(1604.14, -500)
 editor_draw_limits = true
 editor_draw_drag_margin = true
@@ -597,15 +597,13 @@ collision_mask = 3
 position = Vector2(186, 22)
 shape = SubResource("RectangleShape2D_ypd86")
 
-[connection signal="body_entered" from="Area2D" to="CanvasLayer/CharacterBody2D" method="_on_Water_Collision"]
-
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+[node name="CharacterBody2D#Camera2D2" type="Camera2D" parent="."]
 scale = Vector2(0.2, 0.2)
 offset = Vector2(120, 0)
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="ScoreLabel" type="RichTextLabel" parent="CharacterBody2D/Camera2D2"]
+[node name="CharacterBody2D_Camera2D2#ScoreLabel" type="RichTextLabel" parent="."]
 offset_left = 82.0885
 offset_top = -1319.7
 offset_right = 544.088
@@ -618,7 +616,7 @@ script = ExtResource("3_ruepk")
 Category = "Score: "
 metadata/_edit_use_anchors_ = true
 
-[node name="CurrentPower" type="RichTextLabel" parent="CharacterBody2D/Camera2D2"]
+[node name="CharacterBody2D_Camera2D2#CurrentPower" type="RichTextLabel" parent="."]
 offset_left = -1628.09
 offset_top = -1315.59
 offset_right = -1166.09
@@ -631,4 +629,4 @@ script = ExtResource("3_ruepk")
 Category = "Power: "
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_Water_Collision"]
+[connection signal="body_entered" from="Area2D" to="CanvasLayer/CharacterBody2D" method="_on_Water_Collision"]

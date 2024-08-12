@@ -12,6 +12,10 @@ func _on_body_entered(body):
 	SingletonVars.setScore(eggValue)
 	if (eggValue == 10):
 		SingletonVars.setEggsCollected(1,0,0)
+	if (eggValue == 20):
+		SingletonVars.setEggsCollected(0,1,0)
+	if (eggValue == 50):
+		SingletonVars.setEggsCollected(0,0,1)
 	deleteEgg();
 
 
