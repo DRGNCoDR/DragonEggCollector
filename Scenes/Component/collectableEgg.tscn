@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7opcmp56biwl"]
 
 [ext_resource type="Script" path="res://Scripts/GameObjects/collectableEgg.gd" id="1_xbqip"]
-[ext_resource type="Texture2D" uid="uid://bwuhco4r3bk3g" path="res://Assets/Sprites/BaseEgg.png" id="2_bu277"]
+[ext_resource type="Texture2D" uid="uid://d3ydmyhlmd8qf" path="res://Assets/Sprites/BaseEgg.png" id="2_bu277"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ny3xc"]
 radius = 57.0

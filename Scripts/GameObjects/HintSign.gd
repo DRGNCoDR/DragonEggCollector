@@ -10,7 +10,8 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	$Popup.visible = true;
-
+	#var window = DisplayServer.window_get_size();
+	#$Popup.transform.position = Vector2(window.x ,window.y);
 
 func _on_area_2d_body_exited(body):
 	$Popup.visible = false;

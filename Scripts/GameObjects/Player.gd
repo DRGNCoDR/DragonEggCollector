@@ -29,4 +29,4 @@ func _physics_process(delta):
 
 
 func _on_Water_Collision(body):
-	body.position =  Vector2(50,450)
+	body.position =  Vector2(200,450)

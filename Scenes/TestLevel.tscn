@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://xuo8cma0wdlx"]
 
-[ext_resource type="Texture2D" uid="uid://did0df27cat66" path="res://Assets/four-seasons-tileset.png" id="1_mx0bg"]
+[ext_resource type="Texture2D" uid="uid://dqv8jepcrsxk5" path="res://Assets/four-seasons-tileset.png" id="1_mx0bg"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="3_ruepk"]
 [ext_resource type="PackedScene" uid="uid://csefkacgitkrp" path="res://Scenes/Player.tscn" id="3_uofg6"]
 [ext_resource type="PackedScene" uid="uid://dhwb72qf61pf" path="res://Scenes/Component/HintSign.tscn" id="5_ltcwt"]
@@ -573,12 +573,6 @@ scale = Vector2(0.154955, 0.165869)
 collision_layer = 3
 collision_mask = 3
 
-[node name="Cage" parent="." instance=ExtResource("8_entxh")]
-light_mask = 3
-visibility_layer = 3
-position = Vector2(451, 375)
-scale = Vector2(0.314526, 0.24)
-
 [node name="JumpMushroom3" parent="." instance=ExtResource("6_sbe1o")]
 position = Vector2(1089, 182)
 
@@ -590,6 +584,10 @@ collision_layer = 3
 collision_mask = 3
 eggValue = 100
 
+[node name="Cage" parent="." instance=ExtResource("8_entxh")]
+position = Vector2(460, 366)
+scale = Vector2(0.42, 0.30303)
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(525, 541)
 collision_layer = 3
@@ -600,3 +598,37 @@ position = Vector2(186, 22)
 shape = SubResource("RectangleShape2D_ypd86")
 
 [connection signal="body_entered" from="Area2D" to="CanvasLayer/CharacterBody2D" method="_on_Water_Collision"]
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+offset = Vector2(120, 0)
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="ScoreLabel" type="RichTextLabel" parent="CharacterBody2D/Camera2D2"]
+offset_left = 82.0885
+offset_top = -1319.7
+offset_right = 544.088
+offset_bottom = -1182.7
+scale = Vector2(1, 0.919999)
+theme_override_font_sizes/normal_font_size = 100
+text = "0"
+fit_content = true
+script = ExtResource("3_ruepk")
+Category = "Score: "
+metadata/_edit_use_anchors_ = true
+
+[node name="CurrentPower" type="RichTextLabel" parent="CharacterBody2D/Camera2D2"]
+offset_left = -1628.09
+offset_top = -1315.59
+offset_right = -1166.09
+offset_bottom = -1178.59
+scale = Vector2(1, 0.919999)
+theme_override_font_sizes/normal_font_size = 100
+text = "0"
+fit_content = true
+script = ExtResource("3_ruepk")
+Category = "Power: "
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_Water_Collision"]
