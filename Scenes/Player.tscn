@@ -18,3 +18,8 @@ texture = ExtResource("2_q5gcd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.00003, 10)
 shape = SubResource("RectangleShape2D_b3rgw")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(300, 0)
+editor_draw_limits = true
+editor_draw_drag_margin = true

@@ -459,6 +459,47 @@ size = Vector2(377, 20)
 [node name="TestLevel" type="Node2D"]
 position = Vector2(16, -1)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 652.0
+offset_bottom = 264.0
+
+[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "0"
+fit_content = true
+script = ExtResource("3_ruepk")
+Category = "Score: "
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="CurrentPower" type="RichTextLabel" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "0"
+fit_content = true
+script = ExtResource("3_ruepk")
+Category = "Power: "
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" parent="CanvasLayer" instance=ExtResource("3_uofg6")]
+position = Vector2(72.0008, 451.618)
+scale = Vector2(0.292368, 0.243237)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Camera2D2" type="Camera2D" parent="CanvasLayer/CharacterBody2D"]
+position = Vector2(1604.14, -500)
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2(-9, -1)
 tile_set = SubResource("TileSet_0wia6")
@@ -558,41 +599,4 @@ collision_mask = 3
 position = Vector2(186, 22)
 shape = SubResource("RectangleShape2D_ypd86")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_uofg6")]
-position = Vector2(56.0008, 452.618)
-scale = Vector2(0.292368, 0.243237)
-collision_layer = 2
-collision_mask = 2
-
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(1604.14, -500)
-editor_draw_limits = true
-editor_draw_drag_margin = true
-
-[node name="ScoreLabel" type="RichTextLabel" parent="CharacterBody2D/Camera2D2"]
-offset_left = 82.0885
-offset_top = -1319.7
-offset_right = 544.088
-offset_bottom = -1182.7
-scale = Vector2(1, 0.919999)
-theme_override_font_sizes/normal_font_size = 100
-text = "0"
-fit_content = true
-script = ExtResource("3_ruepk")
-Category = "Score: "
-metadata/_edit_use_anchors_ = true
-
-[node name="CurrentPower" type="RichTextLabel" parent="CharacterBody2D/Camera2D2"]
-offset_left = -1628.09
-offset_top = -1315.59
-offset_right = -1166.09
-offset_bottom = -1178.59
-scale = Vector2(1, 0.919999)
-theme_override_font_sizes/normal_font_size = 100
-text = "0"
-fit_content = true
-script = ExtResource("3_ruepk")
-Category = "Power: "
-metadata/_edit_use_anchors_ = true
-
-[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_Water_Collision"]
+[connection signal="body_entered" from="Area2D" to="CanvasLayer/CharacterBody2D" method="_on_Water_Collision"]

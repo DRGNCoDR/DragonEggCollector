@@ -1,4 +1,4 @@
-extends RichTextLabel
+extends Label
 @export var Category = ""
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -8,6 +8,6 @@ func UpdateScoreLabel():
 	if(Category == "Power: "):
 		text = Category + str(SingletonVars.BaseEggsCollected)
 	if(Category == "Score: "):
-		text = Category + str(SingletonVars.Score)
+		text = str(SingletonVars.Score)
 	
 

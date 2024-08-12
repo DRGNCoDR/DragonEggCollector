@@ -1,8 +1,8 @@
-extends RichTextLabel
+extends Label
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	updateEggLabel()
 
 func updateEggLabel():	
-	text = "Base Egg Count:" + str(SingletonVars.BaseEggsCollected)
+	text =  str(SingletonVars.BaseEggsCollected)
