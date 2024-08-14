@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://xuo8cma0wdlx"]
 
-[ext_resource type="Texture2D" uid="uid://dqv8jepcrsxk5" path="res://Assets/four-seasons-tileset.png" id="1_mx0bg"]
+[ext_resource type="Texture2D" uid="uid://did0df27cat66" path="res://Assets/four-seasons-tileset.png" id="1_mx0bg"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="3_ruepk"]
 [ext_resource type="PackedScene" uid="uid://csefkacgitkrp" path="res://Scenes/Player.tscn" id="3_uofg6"]
 [ext_resource type="PackedScene" uid="uid://dhwb72qf61pf" path="res://Scenes/Component/HintSign.tscn" id="5_ltcwt"]

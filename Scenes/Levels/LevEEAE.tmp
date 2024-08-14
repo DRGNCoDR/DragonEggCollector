@@ -504,4 +504,3 @@ popupText = "End of the line... Or is it?"
 [node name="Cage" parent="." instance=ExtResource("4_pnkq5")]
 position = Vector2(302, 808)
 scale = Vector2(0.315954, 0.228114)
-RequiredPower = 3

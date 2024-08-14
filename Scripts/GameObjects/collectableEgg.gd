@@ -8,7 +8,7 @@ func _ready():
 func deleteEgg():
 	queue_free()
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	SingletonVars.setScore(eggValue)
 	if (eggValue == 10):
 		SingletonVars.setEggsCollected(1,0,0)

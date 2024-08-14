@@ -1,7 +1,7 @@
 extends Label
 @export var EggType = ""
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	updateEggLabel()
 
 func updateEggLabel():	
