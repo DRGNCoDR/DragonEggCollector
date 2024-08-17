@@ -1,13 +1,13 @@
 extends Label
-@export var EggType = ""
+@export_enum("Base", "Mid", "Large") var egg_type : String
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	updateEggLabel()
 
 func updateEggLabel():	
-	if (EggType == "base"):
+	if (egg_type == "Base"):
 		text =  str(SingletonVars.BaseEggsCollected)
-	if (EggType == "mid"):
+	if (egg_type == "Mid"):
 		text =  str(SingletonVars.MidEggsCollected)
-	if (EggType == "lg"):
+	if (egg_type == "Large"):
 		text =  str(SingletonVars.LargeEggsCollected)

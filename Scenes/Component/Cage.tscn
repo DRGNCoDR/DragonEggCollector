@@ -1,16 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://38in7ayi4icx"]
+[gd_scene load_steps=6 format=3 uid="uid://38in7ayi4icx"]
 
 [ext_resource type="Script" path="res://Scripts/GameObjects/Cage.gd" id="1_8ucp4"]
 [ext_resource type="Texture2D" uid="uid://cxr2g08nohxoo" path="res://Assets/Cage.png" id="2_kdyhb"]
+[ext_resource type="Texture2D" uid="uid://6fp2q7t7fuim" path="res://Assets/Cage Breakable.png" id="3_yilva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u15ke"]
 size = Vector2(208, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8chrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kdyhb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("2_kdyhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yilva")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="Cage" type="Node2D"]
 script = ExtResource("1_8ucp4")
 RequiredPower = 6
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(148, 92)
 collision_layer = 3
 collision_mask = 3
 
@@ -18,18 +42,22 @@ collision_mask = 3
 position = Vector2(-5, -13)
 shape = SubResource("RectangleShape2D_u15ke")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -118.0
-offset_top = -137.0
-offset_right = 101.0
-offset_bottom = -84.0
+[node name="RequiredText" type="Label" parent="."]
+custom_minimum_size = Vector2(80, 0)
+offset_left = 30.0
+offset_top = -45.0
+offset_right = 249.0
+offset_bottom = 8.0
 scale = Vector2(1, 1.64)
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "Required: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7, -6.00001)
+[node name="CagedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(139, 86)
 scale = Vector2(0.314516, 0.262673)
-texture = ExtResource("2_kdyhb")
+sprite_frames = SubResource("SpriteFrames_8chrc")
+animation = &"new_animation"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

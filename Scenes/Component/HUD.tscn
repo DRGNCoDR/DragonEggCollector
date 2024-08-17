@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://byv3sqjuepy43"]
 
-[ext_resource type="Texture2D" uid="uid://bwuhco4r3bk3g" path="res://Assets/Sprites/BaseEgg.png" id="1_0fydk"]
-[ext_resource type="Texture2D" uid="uid://ctpqe66oifdme" path="res://Assets/Sprites/EpicEgg.png" id="2_2roba"]
-[ext_resource type="Texture2D" uid="uid://ofeqsoa5paql" path="res://Assets/Sprites/MidEgg.png" id="3_eeapf"]
-[ext_resource type="Script" path="res://Scripts/GameObjects/BaseEggLabel.gd" id="4_7wn3b"]
-[ext_resource type="Texture2D" uid="uid://ctgkc8dl4kgrh" path="res://Assets/rigel_icon_by_syncrhoschard_dg1rf7g-fullview.png" id="4_v8lqa"]
+[ext_resource type="Texture2D" uid="uid://d3ydmyhlmd8qf" path="res://Assets/Sprites/BaseEgg.png" id="1_0fydk"]
+[ext_resource type="Texture2D" uid="uid://tgifiq3mu12t" path="res://Assets/Sprites/LargeEgg.png" id="2_2roba"]
+[ext_resource type="Texture2D" uid="uid://4a4ecmpi4e2m" path="res://Assets/Sprites/MidEgg.png" id="3_eeapf"]
+[ext_resource type="Script" path="res://Scripts/GameObjects/EggLabel.gd" id="3_mqvju"]
+[ext_resource type="Texture2D" uid="uid://tibhgn6l7g54" path="res://Assets/rigel_icon_by_syncrhoschard_dg1rf7g-fullview.png" id="4_v8lqa"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="5_oui4k"]
 
 [sub_resource type="FontFile" id="FontFile_jgb2w"]
@@ -80,17 +80,19 @@ expand_mode = 5
 stretch_mode = 4
 
 [node name="MedEggCount" type="Label" parent="MedEggTexture"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
+offset_left = -8.0
 offset_top = 67.0
-offset_right = 64.0
+offset_right = 72.0
 offset_bottom = 108.0
 theme_override_fonts/font = SubResource("FontFile_jgb2w")
 theme_override_font_sizes/font_size = 30
 text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("4_7wn3b")
-EggType = "mid"
+script = ExtResource("3_mqvju")
+egg_type = "Mid"
 
 [node name="BaseEggTexture" type="TextureRect" parent="."]
 anchors_preset = 5
@@ -105,18 +107,19 @@ expand_mode = 5
 stretch_mode = 4
 
 [node name="BaseEggCount" type="Label" parent="BaseEggTexture"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
-offset_left = 3.0
+offset_left = -8.0
 offset_top = 75.0
-offset_right = 67.0
+offset_right = 72.0
 offset_bottom = 116.0
 theme_override_fonts/font = SubResource("FontFile_jgb2w")
 theme_override_font_sizes/font_size = 30
 text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("4_7wn3b")
-EggType = "base"
+script = ExtResource("3_mqvju")
+egg_type = "Base"
 
 [node name="LgEggTexture" type="TextureRect" parent="."]
 anchors_preset = 5
@@ -132,18 +135,19 @@ expand_mode = 5
 stretch_mode = 4
 
 [node name="LgEggCount" type="Label" parent="LgEggTexture"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
-offset_left = -3.0
+offset_left = -11.0
 offset_top = 71.0
-offset_right = 61.0
+offset_right = 69.0
 offset_bottom = 112.0
 theme_override_fonts/font = SubResource("FontFile_jgb2w")
 theme_override_font_sizes/font_size = 30
 text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("4_7wn3b")
-EggType = "lg"
+script = ExtResource("3_mqvju")
+egg_type = "Large"
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchors_preset = 1
@@ -160,6 +164,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="ScoreCount" type="Label" parent="ScoreLabel"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
 offset_left = 6.0
 offset_top = 52.0

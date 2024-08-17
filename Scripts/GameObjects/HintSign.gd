@@ -9,9 +9,7 @@ func _ready():
 	setText();
 
 func _on_area_2d_body_entered(_body):
-	$Popup.visible = true;
-	#var window = DisplayServer.window_get_size();
-	#$Popup.transform.position = Vector2(window.x ,window.y);
+	$Popup.visible = true;	
 
 func _on_area_2d_body_exited(_body):
 	$Popup.visible = false;
