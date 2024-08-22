@@ -10,6 +10,7 @@ func _ready():
 
 func _on_area_2d_body_entered(_body):
 	$Popup.visible = true;	
+	
 
 func _on_area_2d_body_exited(_body):
 	$Popup.visible = false;

@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://byv3sqjuepy43"]
 
-[ext_resource type="Texture2D" uid="uid://d3ydmyhlmd8qf" path="res://Assets/Sprites/BaseEgg.png" id="1_0fydk"]
-[ext_resource type="Texture2D" uid="uid://tgifiq3mu12t" path="res://Assets/Sprites/LargeEgg.png" id="2_2roba"]
-[ext_resource type="Texture2D" uid="uid://4a4ecmpi4e2m" path="res://Assets/Sprites/MidEgg.png" id="3_eeapf"]
+[ext_resource type="Texture2D" uid="uid://bwuhco4r3bk3g" path="res://Assets/Sprites/BaseEgg.png" id="1_0fydk"]
+[ext_resource type="Texture2D" uid="uid://d224wad7ksm2m" path="res://Assets/Sprites/LargeEgg.png" id="2_2roba"]
+[ext_resource type="Texture2D" uid="uid://ofeqsoa5paql" path="res://Assets/Sprites/MidEgg.png" id="3_eeapf"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/EggLabel.gd" id="3_mqvju"]
-[ext_resource type="Texture2D" uid="uid://tibhgn6l7g54" path="res://Assets/rigel_icon_by_syncrhoschard_dg1rf7g-fullview.png" id="4_v8lqa"]
+[ext_resource type="Texture2D" uid="uid://ctgkc8dl4kgrh" path="res://Assets/rigel_icon_by_syncrhoschard_dg1rf7g-fullview.png" id="4_v8lqa"]
 [ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="5_oui4k"]
 
 [sub_resource type="FontFile" id="FontFile_jgb2w"]

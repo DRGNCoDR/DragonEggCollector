@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bfhav7lk5jiuc"]
 
 [ext_resource type="PackedScene" uid="uid://byv3sqjuepy43" path="res://Scenes/Component/HUD.tscn" id="1_idvnq"]
-[ext_resource type="Texture2D" uid="uid://dqv8jepcrsxk5" path="res://Assets/four-seasons-tileset.png" id="2_qqmg1"]
+[ext_resource type="Texture2D" uid="uid://did0df27cat66" path="res://Assets/four-seasons-tileset.png" id="2_qqmg1"]
 [ext_resource type="PackedScene" uid="uid://b7opcmp56biwl" path="res://Scenes/Component/collectableEgg.tscn" id="3_f3osc"]
 [ext_resource type="PackedScene" uid="uid://ba2i8yovokk4b" path="res://Scenes/Component/JumpMushroom.tscn" id="4_h6y5v"]
 [ext_resource type="PackedScene" uid="uid://38in7ayi4icx" path="res://Scenes/Component/Cage.tscn" id="5_uu2xg"]
@@ -449,7 +449,7 @@ texture = ExtResource("2_qqmg1")
 3:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:15/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_3cier"]
+[sub_resource type="TileSet" id="TileSet_ewb4h"]
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_tfx52")
@@ -462,8 +462,8 @@ sources/0 = SubResource("TileSetAtlasSource_icr87")
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(1, -1)
-tile_set = SubResource("TileSet_3cier")
+position = Vector2(2, -2)
+tile_set = SubResource("TileSet_ewb4h")
 collision_animatable = true
 format = 2
 layer_0/name = "Background"
@@ -482,6 +482,7 @@ scale = Vector2(0.358491, 0.282786)
 position = Vector2(2114, 1337)
 scale = Vector2(0.272314, 0.232126)
 RequiredPower = 3
+NextLevel = "Level3"
 
 [node name="Collectable Egg" parent="." instance=ExtResource("3_f3osc")]
 position = Vector2(313, 1430)
