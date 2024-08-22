@@ -2,3 +2,5 @@
 .godot/
 
 *.import
+
+export_presets.cfg
