@@ -5,15 +5,15 @@ extends Node2D
 @export var popupText = "";
 
 func _ready():
-	$Popup.visible = popupShown;
+	$HBoxContainer/Popup.visible = popupShown;
 	setText();
 
 func _on_area_2d_body_entered(_body):
-	$Popup.visible = true;	
+	$HBoxContainer/Popup.visible = true;	
 	
 
 func _on_area_2d_body_exited(_body):
-	$Popup.visible = false;
+	$HBoxContainer/Popup.visible = false;
 	
 func setText():
-	$"Popup".setText(popupText)
+	$HBoxContainer/Popup.setText(popupText)

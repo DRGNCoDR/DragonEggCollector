@@ -45,7 +45,21 @@ frame_progress = 0.231013
 position = Vector2(0, -0.75)
 shape = SubResource("RectangleShape2D_l0ecr")
 
-[node name="Popup" parent="." instance=ExtResource("2_rnaoq")]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup" parent="HBoxContainer" instance=ExtResource("2_rnaoq")]
+position = Vector2(44, 11)
 scale = Vector2(0.48, 0.399999)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
