@@ -10,10 +10,10 @@ func _ready():
 func _process(_delta):
 	#Displays animation if we have collected enough power
 	if (checkCanBreakCage()):	
-		_animSprite.play("new_animation")
+d		_animSprite.play("new_animation")
 		$RequiredText.set("theme_override_colors/font_color",Color.GREEN)
-	else:
-		_animSprite.play("default")
+	#else:
+		#_animSprite.play("default")
 
 func breakCage():
 	#Make sure we have acquired enough power to break cage

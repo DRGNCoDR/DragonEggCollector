@@ -5,6 +5,8 @@ extends Area2D
 func _ready():
 	if (egg_type != ""):
 		$Sprite2D.texture = load("res://Assets/Sprites/" + egg_type + "Egg.png")
+		
+	$AnimationPlayer.play("Idle")
 	
 func deleteEgg():
 	queue_free()

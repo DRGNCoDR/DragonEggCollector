@@ -1,18 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7opcmp56biwl"]
+[gd_scene format=3 uid="uid://b7opcmp56biwl"]
 
-[ext_resource type="Script" path="res://Scripts/GameObjects/collectableEgg.gd" id="1_xbqip"]
+[ext_resource type="Script" uid="uid://d1odfihe3fwqn" path="res://Scripts/GameObjects/collectableEgg.gd" id="1_xbqip"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ny3xc"]
 radius = 57.0
-height = 142.0
+height = 116.62672
 
-[node name="Collectable Egg" type="Area2D"]
+[sub_resource type="Animation" id="Animation_xfsd4"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t2xcu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bas0v"]
+_data = {
+&"Idle": SubResource("Animation_xfsd4"),
+&"RESET": SubResource("Animation_t2xcu")
+}
+
+[node name="Collectable Egg" type="Area2D" unique_id=1987830404]
 scale = Vector2(0.4, 0.445867)
 script = ExtResource("1_xbqip")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1423069374]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2043794126]
+scale = Vector2(0.3000006, 0.37200743)
 shape = SubResource("CapsuleShape2D_ny3xc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=810858904]
+libraries/ = SubResource("AnimationLibrary_bas0v")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

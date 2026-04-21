@@ -1,50 +1,50 @@
-[gd_scene load_steps=7 format=3 uid="uid://byv3sqjuepy43"]
+[gd_scene format=3 uid="uid://byv3sqjuepy43"]
 
 [ext_resource type="Texture2D" uid="uid://bwuhco4r3bk3g" path="res://Assets/Sprites/BaseEgg.png" id="1_0fydk"]
 [ext_resource type="Texture2D" uid="uid://d224wad7ksm2m" path="res://Assets/Sprites/LargeEgg.png" id="2_2roba"]
 [ext_resource type="Texture2D" uid="uid://ofeqsoa5paql" path="res://Assets/Sprites/MidEgg.png" id="3_eeapf"]
-[ext_resource type="Script" path="res://Scripts/GameObjects/EggLabel.gd" id="3_mqvju"]
+[ext_resource type="Script" uid="uid://b43dmwcem70n4" path="res://Scripts/GameObjects/EggLabel.gd" id="3_mqvju"]
 [ext_resource type="Texture2D" uid="uid://ctgkc8dl4kgrh" path="res://Assets/rigel_icon_by_syncrhoschard_dg1rf7g-fullview.png" id="4_v8lqa"]
-[ext_resource type="Script" path="res://Scripts/GameObjects/ScoreLabel.gd" id="5_oui4k"]
+[ext_resource type="Script" uid="uid://n63h7l2lon8p" path="res://Scripts/GameObjects/ScoreLabel.gd" id="5_oui4k"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=1900802087]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1936313673]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 120.0
+offset_bottom = 104.0
 grow_horizontal = 2
 color = Color(0.00566115, 0.00566115, 0.00566115, 1)
 
-[node name="PlayerPortrait" type="TextureRect" parent="."]
-offset_left = 10.0
-offset_top = 2.0
-offset_right = 106.0
-offset_bottom = 106.0
+[node name="PlayerPortrait" type="TextureRect" parent="." unique_id=1565731814]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 100.0
+offset_bottom = 107.0
 texture = ExtResource("4_v8lqa")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="MedEggTexture" type="TextureRect" parent="."]
+[node name="MedEggTexture" type="TextureRect" parent="." unique_id=981024318]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -40.0
-offset_top = 8.0
+offset_left = -32.0
+offset_top = 5.0
 offset_right = 24.0
-offset_bottom = 85.0
+offset_bottom = 81.90323
 grow_horizontal = 2
 texture = ExtResource("3_eeapf")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="MedEggCount" type="Label" parent="MedEggTexture"]
+[node name="MedEggCount" type="Label" parent="MedEggTexture" unique_id=27079678]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
-offset_left = -8.0
-offset_top = 67.0
-offset_right = 72.0
-offset_bottom = 108.0
+offset_left = -10.0
+offset_top = 60.0
+offset_right = 70.0
+offset_bottom = 102.0
 theme_override_font_sizes/font_size = 30
 text = "0000"
 horizontal_alignment = 1
@@ -52,25 +52,26 @@ vertical_alignment = 1
 script = ExtResource("3_mqvju")
 egg_type = "Mid"
 
-[node name="BaseEggTexture" type="TextureRect" parent="."]
+[node name="BaseEggTexture" type="TextureRect" parent="." unique_id=116655411]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -152.0
-offset_right = -88.0
-offset_bottom = 80.0
+offset_left = -143.0
+offset_top = 4.0
+offset_right = -87.0
+offset_bottom = 82.5
 grow_horizontal = 2
 texture = ExtResource("1_0fydk")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="BaseEggCount" type="Label" parent="BaseEggTexture"]
+[node name="BaseEggCount" type="Label" parent="BaseEggTexture" unique_id=1246117317]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
-offset_left = -8.0
-offset_top = 75.0
-offset_right = 72.0
-offset_bottom = 116.0
+offset_left = -10.0
+offset_top = 61.0
+offset_right = 70.0
+offset_bottom = 103.0
 theme_override_font_sizes/font_size = 30
 text = "0000"
 horizontal_alignment = 1
@@ -78,26 +79,26 @@ vertical_alignment = 1
 script = ExtResource("3_mqvju")
 egg_type = "Base"
 
-[node name="LgEggTexture" type="TextureRect" parent="."]
+[node name="LgEggTexture" type="TextureRect" parent="." unique_id=1231676577]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 72.0
+offset_left = 80.0
 offset_top = 4.0
 offset_right = 128.0
-offset_bottom = 82.0606
+offset_bottom = 82.06061
 grow_horizontal = 2
 texture = ExtResource("2_2roba")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="LgEggCount" type="Label" parent="LgEggTexture"]
+[node name="LgEggCount" type="Label" parent="LgEggTexture" unique_id=447723449]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
-offset_left = -11.0
-offset_top = 71.0
-offset_right = 69.0
-offset_bottom = 112.0
+offset_left = -13.0
+offset_top = 61.0
+offset_right = 67.0
+offset_bottom = 103.0
 theme_override_font_sizes/font_size = 30
 text = "0000"
 horizontal_alignment = 1
@@ -105,7 +106,7 @@ vertical_alignment = 1
 script = ExtResource("3_mqvju")
 egg_type = "Large"
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="." unique_id=1458505327]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -119,13 +120,13 @@ text = "SCORE"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ScoreCount" type="Label" parent="ScoreLabel"]
+[node name="ScoreCount" type="Label" parent="ScoreLabel" unique_id=1765515560]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
 offset_left = 6.0
-offset_top = 52.0
+offset_top = 49.0
 offset_right = 94.0
-offset_bottom = 107.0
+offset_bottom = 104.0
 theme_override_font_sizes/font_size = 30
 text = "0000"
 horizontal_alignment = 1

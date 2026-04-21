@@ -6,6 +6,7 @@ func _process(_delta):
 	UpdateScoreLabel()
 
 func UpdateScoreLabel():	
+	var text = ""
 	if(Category == "Power: "):
 		text = Category + str(SingletonVars.BaseEggsCollected)
 	if(Category == "Score: "):
